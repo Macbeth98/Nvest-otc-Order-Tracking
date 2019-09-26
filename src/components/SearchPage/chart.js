@@ -9,22 +9,48 @@ export default class Details extends Component{
     state = {
         _id: "",
         success: null,
-        check: false
+        check: false,
+        search:"otc"
       }
 
   handleSearch = async ()=>{
+    const {search} = this.state;
     console.log(this.state._id);
-    if(this.state._id.length===24){
-    var res = await axios.post(fetch.url+"get_btc_txn", {_id: this.state._id});
-    console.log(res);
-    if(res.data && res.data._id){
-      window.location.replace("/otc/"+this.state._id);
-      //this.setState({success: true, check: true})
-    } else {
-      window.location.replace("/404");
-      //this.setState({success: false, check: true})
+    var res;
+    if(search === "otc"){
+      if(this.state._id.length===24){
+        res = await axios.post(fetch.url+"get_btc_txn", {_id: this.state._id});
+        console.log(res);
+        if(res.data && res.data._id){
+          window.location.replace("/otc/"+this.state._id);
+          //this.setState({success: true, check: true})
+        } else {
+          window.location.replace("/404");
+          //this.setState({success: false, check: true})
+        }
+      } else this.setState({success: false, check: true})
+    } else if (search === "vault"){
+        if(this.state._id.length===24){
+          res = await axios.get(fetch.url+`vault/get_txn?id=${this.state._id}`);
+          console.log(res);
+          if(res.data && res.data._id){
+            window.location.replace("/vault/"+this.state._id);
+            //this.setState({success: true, check: true})
+          } else {
+            window.location.replace("/404");
+            //this.setState({success: false, check: true})
+          }
+        } else this.setState({success: false, check: true})
+    } else{
+      alert("There is an Error! Try Reloading the Page!")
     }
-  } else this.setState({success: false, check: true})
+  }
+
+  handleDrop = async (e)=>{
+    console.log(e.target.value);
+    await this.setState({
+      search: e.target.value
+    })
   }
 
     render(){
@@ -47,9 +73,9 @@ export default class Details extends Component{
 <form onSubmit={(e)=>{e.preventDefault(); this.handleSearch()}}>
       <div class="input-group">
    <span style={{max_width: '10px' }}>
-    <Form.Control as="select" >
-      <option>OTC</option>
-      <option>BTC</option>
+    <Form.Control as="select" onChange={this.handleDrop}>
+      <option value="otc">OTC</option>
+      <option value="vault">Vault</option>
     </Form.Control>
     </span>
         <input type="text" class="form-control" id="validationTooltipUsername" placeholder="Enter Receipt ID" aria-describedby="validationTooltipUsernamePrepend" onChange={(e)=>{

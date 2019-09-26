@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-import SectionOne from '../src/components/sectionone/SectionOne'
-import SectionTwo from '../src/components/sectiontwo/SectionTwo'
-import Checkout from '../src/components/sectionthree/Checkout'
-import Payment from '../src/components/sectionthree/Payment'
-import Destination from '../src/components/sectionthree/Destination'
-import Procurement from '../src/components/sectionthree/Procurement'
-import Fulfilment from '../src/components/sectionthree/Fulfilment'
-import LiveQuote from '../src/components/sectionthree/LiveQuote'
-import fetch from "./fetchurl";
+import SectionOne from './sectionone/SectionOne'
+import SectionTwo from './sectiontwo/SectionTwo'
+import Checkout from './sectionthree/Checkout'
+import Payment from './sectionthree/Payment'
+import Destination from './sectionthree/Destination'
+import Procurement from './sectionthree/Procurement'
+import Fulfilment from './sectionthree/Fulfilment'
+import LiveQuote from './sectionthree/LiveQuote'
+import fetch from "../../fetchurl";
 import axios from "axios";
 
 export default class Main extends Component {

@@ -1,0 +1,26 @@
+.img-wid
+{
+  width: 100%;
+  
+}
+.shad
+{
+  box-shadow: 4px 4px 8px #dcdcdc;
+}
+.bgclr
+{
+  background-color: white !important;
+}
+.pad-img
+{
+  padding-right: 0;
+}
+@media only screen and (max-width: 768px)
+{
+  .pad-img
+{
+  padding-top: 1px;
+  padding-left: 0 !important;
+}
+  
+}

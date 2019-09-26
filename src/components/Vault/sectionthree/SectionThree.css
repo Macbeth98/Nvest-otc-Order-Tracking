@@ -1,0 +1,160 @@
+.accor .accordion
+{
+  box-shadow: 4px 4px 8px #dcdcdc;
+    cursor: pointer;
+}
+.F-T-N
+{
+    float:right;
+}
+.accor .accordion .card
+{
+   border:none;
+}
+.C-class .card-header
+{
+  padding:35px;
+  background-color: white;
+}
+.txt-style
+{
+  font-size: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.body-clr .MuiCollapse-container 
+{
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 4px 4px 8px #e0e0e0;
+
+}
+.body-clr .MuiPaper-root 
+{
+  background-color: #f7f6fb;
+}
+.C-class .card-header
+{
+  border-radius: 8px !important;
+}
+.C-class .accordion
+{
+  border-radius: 8px !important;
+}
+.C-class .card
+{
+  border-radius: 8px !important;
+}
+@media only screen and (max-width: 993px)
+{
+  .txt-style
+  {
+  display: none;      
+  }
+}
+.body-clr .MuiStepIcon-root
+{
+  color: #1975bb;
+}
+.body-clr .MuiStepIcon-active
+{
+  color: #1975bb !important;
+}
+.body-clr .MuiButton-containedPrimary
+{
+  background-color: #1975bb;
+}
+.body-clr .MuiButton-containedPrimary:hover
+{
+  background-color: #1975bb;
+}
+.body-clr .MuiStepIcon-completed
+{
+color: #1975bb !important;
+}
+.fafastyle
+{
+  color: green;
+}
+.fafastyle1
+{
+  color:red !important;
+}
+.hidden
+{
+  opacity: 0.3;
+}
+.accor
+{
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom:0;
+}
+.C-class
+{
+  padding: 0;
+}
+.radioBox {
+  padding: .4rem;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.radioCurrency {
+  display: inline-flex;
+  padding-left: 13px;
+
+}
+
+.radioCurrency .selection label {
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 0.5em;
+  cursor: pointer;
+  border: 2px solid #dcdcdc;
+}
+
+.radioCurrency .selection label:hover {
+  background-color: #8ad7ec2c;
+}
+
+.radioCurrency .selection input[type=radio] {
+  display: none;
+}
+
+.radioCurrency .selection input[type=radio]:checked~label {
+  border: 2px solid #fdb913;
+}
+.dcAmount{
+  color: #999999;
+  font-size: .8rem;
+}
+.timeline::after {
+  content: '';
+  
+  width: 1px;
+  background-color: #000000;
+  position:absolute;
+  height:100%;
+  }
+.crcl
+{color: white;
+  text-align: center;
+  font-size: 13px;
+  background-color: #186AB4;
+  border-radius: 50%;
+  width:1.3rem;
+  height: 1.3rem;
+}
+.lef{
+  margin-left: auto;
+}
+.payrec{
+  margin-left: auto;
+}
+.poslink
+{
+  position: absolute;
+  right: 10%;
+}

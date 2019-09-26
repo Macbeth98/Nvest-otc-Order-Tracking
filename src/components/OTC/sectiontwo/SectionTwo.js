@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import Img1 from '../../Images/ss1.jpg'
-import Img2 from '../../Images/ss2.jpg'
+import Img1 from '../../../Images/ss1.jpg'
+import Img2 from '../../../Images/ss2.jpg'
 import '../sectiontwo/SectionTwo.css'
 export default class SectionTwo extends Component {
   render() {
@@ -16,10 +16,10 @@ export default class SectionTwo extends Component {
       <a href=" www.whatisgx.com">
       <img className="img-wid" src={Img2}></img>
       </a>
-      </div>      
+      </div>
       </div>
 
-        
+
       </div>
     )
   }

@@ -1,0 +1,33 @@
+.head-sty
+{
+  font-family: 'Roboto Condensed', sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+    font-size: 1.75rem !important;
+    font-weight: 500;
+}
+.btnstyle{
+  border-radius: 22px;
+  background-color:#186AB4 !important;
+}
+.checkbox-style
+{
+  padding-right: 4rem;
+}
+.left-align
+{
+  float: right;
+  padding-left: 5px;
+}
+.mrgin
+{
+  margin:17px;
+}
+
+@media only screen and (min-width: 768px)
+{
+  .btn-algn
+  {
+    float: right;
+  } 
+  
+}

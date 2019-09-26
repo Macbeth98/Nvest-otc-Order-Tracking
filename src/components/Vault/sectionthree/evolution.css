@@ -1,0 +1,18 @@
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 1px;
+  background-color: #000000;
+  height: 50px;
+  margin-left: -5px;
+  }
+
+.timeline1::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    background-color: #000000;
+    height: 102px;
+    margin-left: -5px;
+    top: 83px;
+}

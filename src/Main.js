@@ -1,0 +1,62 @@
+import React, { Component } from 'react'
+import SectionOne from '../src/components/sectionone/SectionOne'
+import SectionTwo from '../src/components/sectiontwo/SectionTwo'
+import Checkout from '../src/components/sectionthree/Checkout'
+import Payment from '../src/components/sectionthree/Payment'
+import Destination from '../src/components/sectionthree/Destination'
+import Procurement from '../src/components/sectionthree/Procurement'
+import Fulfilment from '../src/components/sectionthree/Fulfilment'
+import LiveQuote from '../src/components/sectionthree/LiveQuote'
+import fetch from "./fetchurl";
+import axios from "axios";
+
+export default class Main extends Component {
+  state: {
+    name: "",
+    pid: "",
+    amt_received: "",
+    quote: "",
+    final_quote: 0,
+    dest_auth_address: "",
+    dest_address: "",
+    procurement: "",
+    txn_receipt: "",
+    broker_id: ''
+  }
+  async componentWillMount(){
+    console.log(this.props.match.params.txn_id);
+    var res = await axios.post(fetch.url+"get_btc_txn", {_id: this.props.match.params.txn_id});
+    //console.log(res.data);
+    var txn = res.data;
+    if(txn){
+    await this.setState({
+      name: txn.first_name+ " "+ txn.last_name,
+      pid: txn.user_payment_mode,
+      amt_received: txn.amt_received?txn.amt_received: 0,
+      quote: txn.dest_amt,
+      final_quote: txn.final_quote? txn.final_quote: 0,
+      dest_auth_address: txn.dest_auth_address? txn.dest_auth_address: "",
+      dest_address: txn.dest_address,
+      procurement: txn.procurement?txn.procurement: "",
+      txn_receipt: txn.txn_receipt? txn.txn_receipt: "",
+      broker_id: txn.broker_id
+    })
+  } else window.location.replace("/404")
+  }
+  render() {
+    return (
+      <div className="mb-5">
+        {this.state &&  this.state.broker_id.length>0?(<div>
+       <SectionOne name={this.state.name} broker_id={this.state.broker_id} />
+       <SectionTwo  />
+       <Checkout/>
+       <Payment pid={this.state.pid} amt_received={this.state.amt_received} />
+       <LiveQuote final_quote={this.state.final_quote} />
+       <Destination dest_address={this.state.dest_address} dest_auth_address={this.state.dest_auth_address} />
+       <Procurement procurement={this.state.procurement}/>
+       <Fulfilment txn_receipt={this.state.txn_receipt}/>
+       </div>): ""}
+      </div>
+    )
+  }
+}

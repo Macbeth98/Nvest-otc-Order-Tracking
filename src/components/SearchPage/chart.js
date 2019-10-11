@@ -41,6 +41,18 @@ export default class Details extends Component{
             //this.setState({success: false, check: true})
           }
         } else this.setState({success: false, check: true})
+    } else if (search === "token"){
+      if(this.state._id.length===24){
+        res = await axios.get(fetch.url+`gxt/get_token_txn?_id=${this.state._id}`);
+        //console.log(res);
+        if(res.data && res.data._id){
+          window.location.replace("/token/"+this.state._id);
+          //this.setState({success: true, check: true})
+        } else {
+          window.location.replace("/404");
+          //this.setState({success: false, check: true})
+        }
+      } else this.setState({success: false, check: true})
     } else{
       alert("There is an Error! Try Reloading the Page!")
     }
@@ -76,6 +88,7 @@ export default class Details extends Component{
     <Form.Control as="select" onChange={this.handleDrop}>
       <option value="otc">OTC</option>
       <option value="vault">Vault</option>
+      <option value="token">Token</option>
     </Form.Control>
     </span>
         <input type="text" class="form-control" id="validationTooltipUsername" placeholder="Enter Receipt ID" aria-describedby="validationTooltipUsernamePrepend" onChange={(e)=>{

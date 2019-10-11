@@ -47,20 +47,30 @@ export default class SectionThree extends Component {
                         <div className="radioCurrency row" style={{marginLeft:"auto"}}>
                         <div className="form-check selection p-2">
                         <input name="registrationFor" value="TD Canada Trust" type="radio" required/>
-                        {this.props.pid==="wire_transfer"? (
+                        {this.props.pid==="wire-transfer"? (
                         <label htmlFor="tdcanadatrust">
                             <div className="radioBox">
-                                <p className="m-0">Etransfer</p>
+                                <p className="m-0">Wire-transfer</p>
                             </div>
                         </label>
                         ): ""}
                 </div>
                 <div className="form-check selection p-2">
                         <input name="registrationFor" value="TD Canada Trust" type="radio" required/>
-                        {this.props.pid==="e_transfer"? (
+                        {this.props.pid==="e-transfer"? (
                         <label htmlFor="tdcanadatrust">
                             <div className="radioBox">
-                            <p className="m-0">Etransfer</p>
+                            <p className="m-0">ETransfer</p>
+                            </div>
+                        </label>
+                        ): ""}
+                </div>
+                <div className="form-check selection p-2">
+                        <input name="registrationFor" value="TD Canada Trust" type="radio" required/>
+                        {this.props.pid==="BTC" || this.props.pid==="ETH"? (
+                        <label htmlFor="tdcanadatrust">
+                            <div className="radioBox">
+                            <p className="m-0">{this.props.pid}</p>
                             </div>
                         </label>
                         ): ""}

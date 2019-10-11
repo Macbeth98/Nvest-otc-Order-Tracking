@@ -9,6 +9,7 @@ import React, { Component } from "react";
 // import LiveQuote from '../src/components/sectionthree/LiveQuote'
 import OTCMain from "./components/OTC/Main";
 import VaultMain from "./components/Vault/Main";
+import TokenMain from "./components/Token/Main";
 import Notfound from "./components/ErrorPage/404.js";
 import Details from "./components/SearchPage/chart.js";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
@@ -30,6 +31,12 @@ export default class App extends Component {
               exact
               path="/vault/:txn_id"
               render={props => <VaultMain {...props} />}
+            />
+
+            <Route
+              exact
+              path="/token/:txn_id"
+              render={props => <TokenMain {...props} />}
             />
 
             <Route
